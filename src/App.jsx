@@ -31,6 +31,7 @@ function App() {
   };
 
   return (
+    <div className='flex flex-col justify-center items-center'>
     <div className='p-8'>
       <h2>Redux ToolKit with API Integration</h2>
       <button className='cursor-pointer p-2 bg-green-200 rounded-md mt-4' onClick={handleTodo}>
@@ -43,18 +44,23 @@ function App() {
 
       {isLoading && <h2>Loading...</h2>}
       {isError && <h2>Error Occurred</h2>}
-      
-      <form onSubmit={addTodo} className='flex items-center justify-center mt-8 max-w-md'>
-        <input
-          className='w-1/2 border border-red-600 rounded px-2 py-1'
-          type="text"
-          placeholder='Add Todo'
-          value={newTodo}
-          onChange={(e) => setNewTodo(e.target.value)}
-        />
-        <button className="ml-4 py-1 px-4 rounded text-center bg-green-200">Add</button>
-      </form>
-    </div>
+
+      </div>
+
+      <div className='text-center'>
+        <form onSubmit={addTodo} className='flex items-center justify-center mt-8 max-w-md'>
+          <input
+            className='w-1/2 border border-red-600 rounded px-2 py-1'
+            type="text"
+            placeholder='Add Todo'
+            value={newTodo}
+            onChange={(e) => setNewTodo(e.target.value)}
+          />
+          <button className="ml-4 py-1 px-4 rounded text-center bg-green-200">Add</button>
+        </form>
+      </div>
+      </div>
+    
   );
 }
 
